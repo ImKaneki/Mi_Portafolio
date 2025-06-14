@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Portafolio Profesional</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #1e1e2f;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .foto-perfil {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+    }
+
+    nav {
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+
+    nav button {
+      background-color: #4a4a6a;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    nav button:hover {
+      background-color: #6b6ba4;
+    }
+
+    section {
+      padding: 40px;
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    .descargar {
+      margin-top: 20px;
+    }
+
+    .descargar a {
+      background-color: #1e1e2f;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 6px;
+      display: inline-block;
+    }
+
+    footer {
+      background-color: #1e1e2f;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div>
+      <h1>José Manuel - Desarrollador Informático</h1>
+    </div>
+    <img src="css/foto.jpg" alt="Mi Foto" class="foto-perfil">
+  </header>
+
+  <nav>
+    <button onclick="mostrarSeccion('curriculum')">Currículum</button>
+    <button onclick="mostrarSeccion('sobreMi')">Sobre Mí</button>
+    <button onclick="mostrarSeccion('proyectos')">Proyectos</button>
+    <button onclick="mostrarSeccion('contacto')">Contacto</button>
+  </nav>
+
+  <section id="curriculum" class="active">
+    <h2>Mi Currículum</h2>
+    <p>Aquí puedes ver y descargar mi currículum profesional actualizado.</p>
+    <div class="descargar">
+      <a href="css/José Manuel Garriazo Auccasi.pdf" download>Descargar Currículum (PDF)</a>
+    </div>
+  </section>
+
+  <section id="sobreMi">
+    <h2>Sobre Mí</h2>
+    <p>Soy un profesional en informática con experiencia en desarrollo web, software y soporte técnico.</p>
+  </section>
+
+  <section id="proyectos">
+    <h2>Proyectos</h2>
+    <ul>
+      <li>✔️ Sistema de gestión académica</li>
+      <li>✔️ Página web para empresa local</li>
+      <li>✔️ Aplicación móvil para control de inventario</li>
+    </ul>
+  </section>
+
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>Puedes escribirme a través del siguiente formulario:</p>
+    <form>
+      <label>Nombre:<br><input type="text"></label><br><br>
+      <label>Email:<br><input type="email"></label><br><br>
+      <label>Mensaje:<br><textarea rows="4"></textarea></label><br><br>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 José Manuel. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    function mostrarSeccion(id) {
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
